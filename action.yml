@@ -1,0 +1,14 @@
+# https://help.github.com/en/actions/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions
+name: 'Should Run GH Action'
+description: 'A reusable GitHub action to determine if the user clicked a checkbox inn the PR text'
+author: 'Gleb Bahmutov'
+inputs:
+outputs:
+  shouldRun:
+    description: 'Boolean value indicating if next actions should run'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+branding:
+  color: 'yellow'
+  icon: 'check-square'

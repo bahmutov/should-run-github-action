@@ -1,0 +1,26 @@
+{
+  "name": "should-run-github-action",
+  "version": "1.0.0",
+  "description": "A reusable GitHub action to determine if the user clicked a checkbox inn the PR text",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/should-run-github-action.git"
+  },
+  "keywords": [
+    "github-action"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/should-run-github-action/issues"
+  },
+  "homepage": "https://github.com/bahmutov/should-run-github-action#readme",
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.1",
+    "prettier": "^2.5.1"
+  }
+}
