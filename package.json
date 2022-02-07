@@ -28,7 +28,8 @@
   "homepage": "https://github.com/bahmutov/should-run-github-action#readme",
   "devDependencies": {
     "@vercel/ncc": "^0.33.1",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "semantic-release": "^18.0.1"
   },
   "dependencies": {
     "@actions/core": "^1.6.0",
