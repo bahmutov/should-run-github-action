@@ -33,5 +33,11 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "debug": "^4.3.3"
+  },
+  "release": {
+    "npmPublish": false,
+    "branches": [
+      "main"
+    ]
   }
 }

@@ -4,26 +4,18 @@ on:
     branches:
       - 'main'
 jobs:
-  build-and-test:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-      - uses: bahmutov/npm-install@v1
-      - run: npm run build
-
-  release:
+  build-release:
     runs-on: ubuntu-20.04
     name: release
-    needs: [build-and-test]
     # only release from the main branch
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - uses: bahmutov/npm-install@v1
+
+      - run: npm run build
+
       # https://github.com/cycjimmy/semantic-release-action
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
