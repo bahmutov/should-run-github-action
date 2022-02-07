@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "A reusable GitHub action to determine if the user clicked a checkbox inn the PR text",
   "main": "dist/index.js",
+  "files": [
+    "src",
+    "dist",
+    "action.yml"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build -o dist src/index.js",
+    "format": "prettier --write src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +29,9 @@
   "devDependencies": {
     "@vercel/ncc": "^0.33.1",
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "debug": "^4.3.3"
   }
 }
