@@ -43,6 +43,10 @@ To re-run the tests, pick the tags above then click the checkbox below
 
 When the user clicks on the checkbox and changes its state from empty to filled, the action sets its output to `true` to trigger the other workflow steps.
 
+## Examples
+
+- [bahmutov/todomvc-tests-circleci](https://github.com/bahmutov/todomvc-tests-circleci) uses this action in its pull request workflow
+
 For more actions see
 
 - [gh-build-matrix](https://github.com/bahmutov/gh-build-matrix) is a Docker action for building a matrix of jobs
