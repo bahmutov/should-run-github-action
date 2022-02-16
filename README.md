@@ -7,6 +7,7 @@
 See [action.yml](./action.yml) for the current outputs
 
 - `shouldRun` Boolean value indicating if next actions should run
+- `branch` The source (head) branch of the PR or commit
 
 ## Use
 
@@ -61,6 +62,12 @@ For more actions see
 ## Debugging
 
 Run this action with environment variable `DEBUG=should-run-github-action`
+
+## Ref names
+
+- commit pushed to the `main` branch has event.ref "refs/heads/main"
+- commit pushed to the `pr1` branch has event.ref "refs/heads/pr1"
+- for pull requests, from the `pr1` branch the event.pull_request.head.ref is "pr1"
 
 ## Small print
 

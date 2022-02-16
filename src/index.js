@@ -6,6 +6,19 @@ if (!process.env.GITHUB_EVENT) {
   process.exit(0)
 }
 const ghEvent = JSON.parse(process.env.GITHUB_EVENT)
+
+if (ghEvent.pull_request) {
+  debug('pull_request event')
+  const branch = ghEvent.pull_request.head.ref
+  debug('branch "%s"', branch)
+  core.setOutput('branch', branch)
+} else {
+  debug('push event branch "%s"', ghEvent.ref)
+  const branch = ghEvent.ref.replace('refs/heads/', '')
+  debug('branch "%s"', branch)
+  core.setOutput('branch', branch)
+}
+
 if (ghEvent.action !== 'edited') {
   debug('GITHUB_EVENT.action is not edited')
   process.exit(0)
