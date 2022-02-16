@@ -1,0 +1,10 @@
+name: print
+on: [push, pull_request]
+jobs:
+  print:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print the GitHub event 🖨
+        run: echo "$GITHUB_EVENT"
+        env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
