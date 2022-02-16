@@ -7,6 +7,7 @@
 See [action.yml](./action.yml) for the current outputs
 
 - `shouldRun` Boolean value indicating if next actions should run
+- `branch` The source (head) branch of the PR or commit
 
 ## Use
 
