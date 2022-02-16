@@ -5,6 +5,8 @@ author: 'Gleb Bahmutov'
 outputs:
   shouldRun:
     description: 'Boolean value indicating if next actions should run'
+  branch:
+    description: 'The source (head) branch of the PR or commit'
 runs:
   using: 'node16'
   main: 'dist/index.js'
