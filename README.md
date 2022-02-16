@@ -2,6 +2,12 @@
 
 > A reusable GitHub action to determine if the user clicked a checkbox inn the PR text
 
+## Outputs
+
+See [action.yml](./action.yml) for the current outputs
+
+- `shouldRun` Boolean value indicating if next actions should run
+
 ## Use
 
 Create a [GitHub Actions](https://glebbahmutov.com/blog/trying-github-actions/) workflow that runs on pull request edits.
