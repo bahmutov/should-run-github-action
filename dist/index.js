@@ -2856,6 +2856,7 @@ module.exports = require("util");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+// @ts-check
 const core = __nccwpck_require__(186)
 const debug = __nccwpck_require__(237)('should-run-github-action')
 
@@ -2865,14 +2866,15 @@ if (!process.env.GITHUB_EVENT) {
 }
 const ghEvent = JSON.parse(process.env.GITHUB_EVENT)
 
+let branch
 if (ghEvent.pull_request) {
   debug('pull_request event')
-  const branch = ghEvent.pull_request.head.ref
+  branch = ghEvent.pull_request.head.ref
   debug('branch "%s"', branch)
   core.setOutput('branch', branch)
 } else {
   debug('push event branch "%s"', ghEvent.ref)
-  const branch = ghEvent.ref.replace('refs/heads/', '')
+  branch = ghEvent.ref.replace('refs/heads/', '')
   debug('branch "%s"', branch)
   core.setOutput('branch', branch)
 }
