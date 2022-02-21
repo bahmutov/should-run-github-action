@@ -17,3 +17,9 @@ jobs:
         env:
           GITHUB_EVENT: ${{ toJson(github.event) }}
           DEBUG: should-run-github-action
+
+      - name: Print the outputs 🖨
+        run: |
+          echo "PR branch: ${{ steps.check-pr.outputs.branch }}"
+          echo "PR commit: ${{ steps.check-pr.outputs.commit }}"
+          echo "shouldRun: ${{ steps.check-pr.outputs.shouldRun }}"

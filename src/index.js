@@ -30,6 +30,7 @@ debug(ghEvent.changes.body.from)
 debug('PR body after')
 debug(ghEvent.pull_request.body)
 const commit = ghEvent.pull_request.head.sha
+debug('PR head commit SHA %s', commit)
 
 const runTestsCheckboxUnfilled = '[ ] re-run the tests'
 const runTestsCheckboxFilled = '[x] re-run the tests'
