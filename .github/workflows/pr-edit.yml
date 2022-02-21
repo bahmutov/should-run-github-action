@@ -1,0 +1,25 @@
+name: pr-edited
+on:
+  pull_request:
+    types:
+      - edited
+jobs:
+  print-info:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print GitHub variables 🖨
+        # https://github.com/bahmutov/print-env
+        run: npx @bahmutov/print-env GITHUB
+
+      - name: Check the PR ✅
+        uses: bahmutov/should-run-github-action@HEAD
+        id: check-pr
+        env:
+          GITHUB_EVENT: ${{ toJson(github.event) }}
+          DEBUG: should-run-github-action
+
+      - name: Print the outputs 🖨
+        run: |
+          echo "PR branch: ${{ steps.check-pr.outputs.branch }}"
+          echo "PR commit: ${{ steps.check-pr.outputs.commit }}"
+          echo "shouldRun: ${{ steps.check-pr.outputs.shouldRun }}"

@@ -7,6 +7,8 @@ outputs:
     description: 'Boolean value indicating if next actions should run'
   branch:
     description: 'The source (head) branch of the PR or commit'
+  commit:
+    description: 'The commit SHA of the last commit in the head branch'
 runs:
   using: 'node16'
   main: 'dist/index.js'

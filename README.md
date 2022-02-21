@@ -8,6 +8,9 @@ See [action.yml](./action.yml) for the current outputs
 
 - `shouldRun` Boolean value indicating if next actions should run
 - `branch` The source (head) branch of the PR or commit
+- `commit` The head commit SHA of the source branch of the PR commit
+
+You can access the above outputs using `${{ steps.<step name>.outputs.<output name> }}` expression syntax, see the [pr-edit.yml](./.github/workflows/pr-edit.yml) workflow.
 
 ## Use
 

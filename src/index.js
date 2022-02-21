@@ -29,6 +29,8 @@ debug('PR body before')
 debug(ghEvent.changes.body.from)
 debug('PR body after')
 debug(ghEvent.pull_request.body)
+const commit = ghEvent.pull_request.head.sha
+debug('PR head commit SHA %s', commit)
 
 const runTestsCheckboxUnfilled = '[ ] re-run the tests'
 const runTestsCheckboxFilled = '[x] re-run the tests'
@@ -36,8 +38,13 @@ if (
   ghEvent.changes.body.from.includes(runTestsCheckboxUnfilled) &&
   ghEvent.pull_request.body.includes(runTestsCheckboxFilled)
 ) {
-  console.log('Should run GH action')
+  console.log(
+    'Should run GH action on branch "%s" and commit %s',
+    branch,
+    commit,
+  )
   core.setOutput('shouldRun', true)
+  core.setOutput('commit', commit)
 } else {
   console.log('Should not run GH action')
 }
