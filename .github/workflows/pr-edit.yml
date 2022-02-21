@@ -12,7 +12,7 @@ jobs:
         run: npx @bahmutov/print-env GITHUB
 
       - name: Check the PR ✅
-        uses: ./.github/workflows/pr-edit.yml
+        uses: bahmutov/should-run-gh-action@HEAD
         id: check-pr
         env:
           GITHUB_EVENT: ${{ toJson(github.event) }}
