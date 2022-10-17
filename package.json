@@ -11,7 +11,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "ncc build -o dist src/index.js",
-    "format": "prettier --write src/index.js"
+    "format": "prettier --write src/index.js",
+    "badges": "npx -p dependency-version-badge update-badge @actions/core"
   },
   "repository": {
     "type": "git",

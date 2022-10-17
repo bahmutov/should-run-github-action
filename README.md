@@ -1,4 +1,4 @@
-# should-run-github-action
+# should-run-github-action ![@actions/core version](https://img.shields.io/badge/@actions/core-1.10.0-brightgreen)
 
 > A reusable GitHub action to determine if the user clicked a checkbox inn the PR text
 
