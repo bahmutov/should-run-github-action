@@ -2,6 +2,10 @@
 name: 'Should Run GH Action'
 description: 'A reusable GitHub action to determine if the user clicked a checkbox inn the PR text'
 author: 'Gleb Bahmutov'
+inputs:
+  checkbox_text:
+    description: The checkbox text to search
+    required: true
 outputs:
   shouldRun:
     description: 'Boolean value indicating if next actions should run'

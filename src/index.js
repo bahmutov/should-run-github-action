@@ -7,6 +7,7 @@ if (!process.env.GITHUB_EVENT) {
   process.exit(0)
 }
 const ghEvent = JSON.parse(process.env.GITHUB_EVENT)
+const getCheckboxText = core.getInput('checkbox_text', { required: true })
 
 let branch
 if (ghEvent.pull_request) {
@@ -34,8 +35,8 @@ debug(ghEvent.pull_request.body)
 const commit = ghEvent.pull_request.head.sha
 debug('PR head commit SHA %s', commit)
 
-const runTestsCheckboxUnfilled = '[ ] re-run the tests'
-const runTestsCheckboxFilled = '[x] re-run the tests'
+const runTestsCheckboxUnfilled = `[ ] ${getCheckboxText}`
+const runTestsCheckboxFilled = `[x] ${getCheckboxText}`
 if (
   ghEvent.changes.body.from.includes(runTestsCheckboxUnfilled) &&
   ghEvent.pull_request.body.includes(runTestsCheckboxFilled)
