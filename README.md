@@ -2,6 +2,12 @@
 
 > A reusable GitHub action to determine if the user clicked a checkbox inn the PR text
 
+## Inputs
+
+| name          | type   | default | description                  |
+| ------------- | ------ | ------- | ---------------------------- |
+| checkbox_text | string | -       | The checkbox text to display |
+
 ## Outputs
 
 See [action.yml](./action.yml) for the current outputs
@@ -33,6 +39,8 @@ jobs:
         # https://github.com/bahmutov/should-run-github-action
         uses: bahmutov/should-run-github-action@v1
         id: check-pr
+        with:
+          checkbox_text: 're-run the tests'
         env:
           GITHUB_EVENT: ${{ toJson(github.event) }}
 
