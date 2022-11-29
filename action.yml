@@ -4,8 +4,8 @@ description: 'A reusable GitHub action to determine if the user clicked a checkb
 author: 'Gleb Bahmutov'
 inputs:
   checkbox_text:
-    description: The checkbox text to search
-    required: true
+    description: 'The checkbox text to display'
+    default: 're-run the tests'
 outputs:
   shouldRun:
     description: 'Boolean value indicating if next actions should run'

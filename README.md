@@ -4,9 +4,9 @@
 
 ## Inputs
 
-| name          | type   | default | description                  |
-| ------------- | ------ | ------- | ---------------------------- |
-| checkbox_text | string | -       | The checkbox text to display |
+| name          | type   | default          | description                  |
+| ------------- | ------ | ---------------- | ---------------------------- |
+| checkbox_text | string | re-run the tests | The checkbox text to display |
 
 ## Outputs
 
