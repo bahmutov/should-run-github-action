@@ -33,7 +33,7 @@ jobs:
   trigger-tests:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Check the PR
         # https://github.com/bahmutov/should-run-github-action

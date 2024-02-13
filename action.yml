@@ -14,7 +14,7 @@ outputs:
   commit:
     description: 'The commit SHA of the last commit in the head branch'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 branding:
   color: 'yellow'
