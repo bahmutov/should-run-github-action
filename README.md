@@ -1,6 +1,6 @@
 # should-run-github-action ![@actions/core version](https://img.shields.io/badge/@actions/core-1.10.0-brightgreen)
 
-> A reusable GitHub action to determine if the user clicked a checkbox inn the PR text
+> A reusable GitHub action to determine if the user clicked a checkbox in the PR text
 
 ## Inputs
 
@@ -67,12 +67,12 @@ When the user clicks on the checkbox and changes its state from empty to filled,
 
 For more actions see
 
-- [gh-build-matrix](https://github.com/bahmutov/gh-build-matrix) is a Docker action for building a matrix of jobs
-- [github-action](https://github.com/cypress-io/github-action) is a JavaScript action for running Cypress tests
+- [bahmutov/gh-build-matrix](https://github.com/bahmutov/gh-build-matrix) is a Docker action for building a matrix of jobs
+- [cypress-io/github-action](https://github.com/cypress-io/github-action) is a JavaScript action for running Cypress tests
 
 ## Debugging
 
-Run this action with environment variable `DEBUG=should-run-github-action`
+Run this action with the environment variable `DEBUG=should-run-github-action`
 
 ## Ref names
 
@@ -95,7 +95,7 @@ Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
 Support: if you find any problems with this module, email / tweet /
-[open issue](https://github.com/bahmutov/should-run-github-action/issues) on Github
+[open issue](https://github.com/bahmutov/should-run-github-action/issues) on GitHub
 
 ## MIT License
 
