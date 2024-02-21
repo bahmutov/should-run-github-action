@@ -4027,18 +4027,20 @@ if (ghEvent.action !== 'edited') {
 }
 
 // TODO check if this was really an edit of the PR body
+const bodyFrom = ghEvent.changes?.body?.from || ''
+const bodyAfter = ghEvent.pull_request?.body || ''
 debug('PR body before')
-debug(ghEvent.changes.body.from)
+debug(bodyFrom)
 debug('PR body after')
-debug(ghEvent.pull_request.body)
+debug(bodyAfter)
 const commit = ghEvent.pull_request.head.sha
 debug('PR head commit SHA %s', commit)
 
 const runTestsCheckboxUnfilled = `[ ] ${getCheckboxText}`
 const runTestsCheckboxFilled = `[x] ${getCheckboxText}`
 if (
-  ghEvent.changes.body.from.includes(runTestsCheckboxUnfilled) &&
-  ghEvent.pull_request.body.includes(runTestsCheckboxFilled)
+  bodyFrom.includes(runTestsCheckboxUnfilled) &&
+  bodyAfter.includes(runTestsCheckboxFilled)
 ) {
   console.log(
     'Should run GH action on branch "%s" and commit %s',
